@@ -2,6 +2,7 @@ package com.easedroid.demos;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +15,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.easedroid.demos.list.ExoPlayerActivity;
+import com.easedroid.demos.list.exo.ExoPlayerActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,21 +41,31 @@ public class MainActivity extends AppCompatActivity {
     private List<DemoItem> getList() {
         List<DemoItem> arrayList = new ArrayList<>();
         arrayList.add(new DemoItem("ExoPlayer", ExoPlayerActivity.class));
-        arrayList.add(new DemoItem("ExoPlayer", ExoPlayerActivity.class));
         return arrayList;
     }
 
-    private class DemoViewHolder extends RecyclerView.ViewHolder {
+    private class DemoViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private final TextView tvName;
+        private DemoItem demoItem;
 
         public DemoViewHolder(@NonNull View itemView) {
             super(itemView);
             tvName = itemView.findViewById(R.id.tv_name);
+            itemView.setOnClickListener(this);
         }
 
         public void setItemData(DemoItem demoItem) {
+            this.demoItem = demoItem;
             tvName.setText(demoItem.getName());
+        }
+
+        @Override
+        public void onClick(View v) {
+            if (this.demoItem != null) {
+                Intent intent = new Intent(MainActivity.this, demoItem.targetActivityClazz);
+                startActivity(intent);
+            }
         }
     }
 
