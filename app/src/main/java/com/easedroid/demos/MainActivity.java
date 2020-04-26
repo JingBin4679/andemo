@@ -16,6 +16,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.easedroid.demos.list.exo.ExoPlayerActivity;
+import com.easedroid.demos.system.NaviBarActivity;
+import com.easedroid.demos.system.SystemInfoActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
     private List<DemoItem> getList() {
         List<DemoItem> arrayList = new ArrayList<>();
         arrayList.add(new DemoItem("ExoPlayer", ExoPlayerActivity.class));
+        arrayList.add(new DemoItem("SystemInfo", SystemInfoActivity.class));
+        arrayList.add(new DemoItem("SystemBar", NaviBarActivity.class));
         return arrayList;
     }
 
