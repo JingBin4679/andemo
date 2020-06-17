@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add(new DemoItem("ExoPlayer", ExoPlayerActivity.class));
         arrayList.add(new DemoItem("SystemInfo", SystemInfoActivity.class));
         arrayList.add(new DemoItem("SystemBar", NaviBarActivity.class));
+        arrayList.add(new DemoItem("Scale", TVScreenAdaptiveActivity.class));
         return arrayList;
     }
 
@@ -81,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
         private DemoViewAdapter(Context context) {
             this.mContext = context;
         }
+
         public void setData(List<DemoItem> data) {
             this.itemList.addAll(data);
             notifyDataSetChanged();
