@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.easedroid.demos.list.exo.ExoPlayerActivity;
 import com.easedroid.demos.system.NaviBarActivity;
+import com.easedroid.demos.system.ScreenOrientationActivityV2;
 import com.easedroid.demos.system.SystemInfoActivity;
 
 import java.util.ArrayList;
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add(new DemoItem("SystemInfo", SystemInfoActivity.class));
         arrayList.add(new DemoItem("SystemBar", NaviBarActivity.class));
         arrayList.add(new DemoItem("Scale", TVScreenAdaptiveActivity.class));
+        arrayList.add(new DemoItem("Orientation", ScreenOrientationActivityV2.class));
         return arrayList;
     }
 
